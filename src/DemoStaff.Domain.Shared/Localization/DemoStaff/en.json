@@ -1,0 +1,48 @@
+{
+  "Culture": "en",
+  "Texts": {
+    "Menu:Home": "Home",
+    "Welcome": "Welcome",
+    "LongWelcomeMessage": "Welcome to the application. This is a startup project based on the ABP. For more information, visit abp.io.",
+    "Menu:StaffManageMent": "Staff Management",
+    "Menu:Staffs": "Staffs",
+    "Actions": "Actions",
+    "Close": "Close",
+    "Delete": "Delete",
+    "Update": "Update",
+    "DOB": "Date of birth",
+    "NewStaff": "New staff",
+    "Name": "Name",
+    "PhoneNumber": "Phone number",
+    "Email": "Email",
+    "Department": "Department",
+    "Title": "Title",
+    "CreationTime": "Creation time",
+    "AreYouSure": "Are you sure?",
+    "AreYouSureToDelete": "Are you sure you want to delete this item?",
+
+    "Menu:Departments": "Departments",
+    "Departments": "Departments",
+    "DepartmentDeletionConfirmationMessage": "Are you sure to delete the department '{0}'?",
+    "NewDepartment": "New department",
+
+
+    "Enum:Gender.0": "Male",
+    "Enum:Gender.1": "Female",
+    "Enum:Gender.2": "Other",
+
+    "Permission:DemoStaff": "Demo Staff",
+    "Permission:Staffs": "Staff Management",
+    "Permission:Staffs.Create": "Creating new staffs",
+    "Permission:Staffs.Update": "Updateng the staffs",
+    "Permission:Staffs.Delete": "Deleting the staffs",
+    "Permission:Departments": "Staff Management",
+    "Permission:Departments.Create": "Creating new departments",
+    "Permission:Departments.Update": "Updating the departments",
+    "Permission:Departments.Edit": "Updating the departments",
+    "Permission:Departments.Delete": "Deleting the departments",
+
+    "DemoStaff:00001": "There is already a department with the same name: {name}"
+
+  }
+}

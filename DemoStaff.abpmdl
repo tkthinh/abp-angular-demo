@@ -1,0 +1,85 @@
+{
+  "template": "app",
+  "imports": {
+    "Volo.Abp.Account": {
+      "version": "8.3.1",
+      "isInstalled": true
+    },
+    "Volo.Abp.OpenIddict": {
+      "version": "8.3.1",
+      "isInstalled": true
+    },
+    "Volo.Abp.Identity": {
+      "version": "8.3.1",
+      "isInstalled": true
+    },
+    "Volo.Abp.TenantManagement": {
+      "version": "8.3.1",
+      "isInstalled": true
+    }
+  },
+  "folders": {
+    "items": {
+      "src": {},
+      "test": {}
+    }
+  },
+  "packages": {
+    "DemoStaff.Application": {
+      "path": "src/DemoStaff.Application/DemoStaff.Application.abppkg",
+      "folder": "src"
+    },
+    "DemoStaff.Application.Tests": {
+      "path": "test/DemoStaff.Application.Tests/DemoStaff.Application.Tests.abppkg",
+      "folder": "test"
+    },
+    "DemoStaff.Domain.Shared": {
+      "path": "src/DemoStaff.Domain.Shared/DemoStaff.Domain.Shared.abppkg",
+      "folder": "src"
+    },
+    "DemoStaff.Application.Contracts": {
+      "path": "src/DemoStaff.Application.Contracts/DemoStaff.Application.Contracts.abppkg",
+      "folder": "src"
+    },
+    "DemoStaff.HttpApi": {
+      "path": "src/DemoStaff.HttpApi/DemoStaff.HttpApi.abppkg",
+      "folder": "src"
+    },
+    "DemoStaff.HttpApi.Client": {
+      "path": "src/DemoStaff.HttpApi.Client/DemoStaff.HttpApi.Client.abppkg",
+      "folder": "src"
+    },
+    "DemoStaff.EntityFrameworkCore.Tests": {
+      "path": "test/DemoStaff.EntityFrameworkCore.Tests/DemoStaff.EntityFrameworkCore.Tests.abppkg",
+      "folder": "test"
+    },
+    "DemoStaff.EntityFrameworkCore": {
+      "path": "src/DemoStaff.EntityFrameworkCore/DemoStaff.EntityFrameworkCore.abppkg",
+      "folder": "src"
+    },
+    "DemoStaff.TestBase": {
+      "path": "test/DemoStaff.TestBase/DemoStaff.TestBase.abppkg",
+      "folder": "test"
+    },
+    "DemoStaff.Domain.Tests": {
+      "path": "test/DemoStaff.Domain.Tests/DemoStaff.Domain.Tests.abppkg",
+      "folder": "test"
+    },
+    "DemoStaff.HttpApi.Client.ConsoleTestApp": {
+      "path": "test/DemoStaff.HttpApi.Client.ConsoleTestApp/DemoStaff.HttpApi.Client.ConsoleTestApp.abppkg",
+      "folder": "test"
+    },
+    "DemoStaff.DbMigrator": {
+      "path": "src/DemoStaff.DbMigrator/DemoStaff.DbMigrator.abppkg",
+      "folder": "src"
+    },
+    "DemoStaff.HttpApi.Host": {
+      "path": "src/DemoStaff.HttpApi.Host/DemoStaff.HttpApi.Host.abppkg",
+      "folder": "src"
+    },
+    "DemoStaff.Domain": {
+      "path": "src/DemoStaff.Domain/DemoStaff.Domain.abppkg",
+      "folder": "src"
+    }
+  }
+}
