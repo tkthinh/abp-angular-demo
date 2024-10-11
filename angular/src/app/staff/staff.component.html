@@ -8,7 +8,8 @@
       </div>
       <div class="text-end col col-md-6">
         <div class="text-lg-end pt-2">
-          <button *abpPermission="'DemoStaff.Staffs.Create'" id="create" class="btn btn-primary" type="button" (click)="createStaff()">
+          <button *abpPermission="'DemoStaff.Staffs.Create'" id="create" class="btn btn-primary" type="button"
+            (click)="createStaff()">
             <i class="fa fa-plus me-1"></i>
             <span>{{ "::NewStaff" | abpLocalization }}</span>
           </button>
@@ -38,10 +39,10 @@
         </ng-template>
       </ngx-datatable-column>
 
-      <ngx-datatable-column [name]="'::Department' | abpLocalization" prop="department">
-        <ng-template let-row="row" ngx-datatable-cell-template>
+      <ngx-datatable-column [name]="'::Department' | abpLocalization" prop="departmentName" sortable="false">
+        <!-- <ng-template let-row="row" ngx-datatable-cell-template>
           {{ row.department }}
-        </ng-template>
+        </ng-template> -->
       </ngx-datatable-column>
 
       <ngx-datatable-column [name]="'::Title' | abpLocalization" prop="title">
@@ -96,22 +97,32 @@
 
       <div class="mt-2">
         <label for="staff-email">Email</label><span> * </span>
-        <input type="text" id="staff-email" class="form-control" formControlName="email" autofocus />
+        <input type="text" id="staff-email" class="form-control" formControlName="email" />
       </div>
 
       <div class="mt-2">
         <label for="staff-phone">Phone Number</label><span> * </span>
-        <input type="text" id="staff-phone" class="form-control" formControlName="phone" autofocus />
+        <input type="text" id="staff-phone" class="form-control" formControlName="phone" />
       </div>
+
+      <!-- <div class="mt-2">
+        <label for="staff-department">Department</label><span> * </span>
+        <input type="text" id="staff-department" class="form-control" formControlName="department" />
+      </div> -->
 
       <div class="mt-2">
         <label for="staff-department">Department</label><span> * </span>
-        <input type="text" id="staff-department" class="form-control" formControlName="department" autofocus />
+        <select class="form-control" id="staff-department" formControlName="departmentId">
+          <option [ngValue]="null">Select Department</option>
+          <option [ngValue]="department.id" *ngFor="let department of deparments">
+            {{ department.name }}
+          </option>
+        </select>
       </div>
 
       <div class="mt-2">
         <label for="staff-title">Title</label><span> * </span>
-        <input type="text" id="staff-title" class="form-control" formControlName="title" autofocus />
+        <input type="text" id="staff-title" class="form-control" formControlName="title" />
       </div>
 
     </form>

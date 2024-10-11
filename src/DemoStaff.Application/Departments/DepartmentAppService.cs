@@ -14,9 +14,9 @@ namespace DemoStaff.Departments
    public class DepartmentAppService : DemoStaffAppService, IDepartmentAppService
    {
       private readonly IDepartmentRepository _departmentRepository;
-      private readonly DepartmentManager _departmentManager;
+      private readonly TitleManager _departmentManager;
 
-      public DepartmentAppService(IDepartmentRepository departmentRepository, DepartmentManager departmentManager)
+      public DepartmentAppService(IDepartmentRepository departmentRepository, TitleManager departmentManager)
       {
          _departmentRepository = departmentRepository;
          _departmentManager = departmentManager;
@@ -64,12 +64,12 @@ namespace DemoStaff.Departments
       {
          var existingDepartment = await _departmentRepository.GetAsync(id);
 
-         if(input.Name != existingDepartment.Name)
+         if (input.Name != existingDepartment.Name)
          {
             await _departmentManager.ChangeNameAsync(existingDepartment, input.Name);
          }
 
-         await _departmentRepository.UpdateAsync(existingDepartment);
+         var updatedDepartment = await _departmentRepository.UpdateAsync(existingDepartment);
       }
 
       [Authorize(DemoStaffPermissions.Departments.Delete)]
@@ -77,6 +77,7 @@ namespace DemoStaff.Departments
       {
          await _departmentRepository.DeleteAsync(id);
       }
+
 
    }
 }

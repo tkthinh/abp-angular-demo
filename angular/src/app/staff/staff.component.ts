@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { StaffService, StaffDto, genderOptions } from '@proxy/staffs';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Confirmation, ConfirmationService } from '@abp/ng.theme.shared';
+import { DepartmentDto, DepartmentService, GetDepartmentListDto } from '@proxy/departments';
 
 @Component({
   selector: 'app-staff',
@@ -15,6 +16,8 @@ export class StaffComponent implements OnInit {
 
   selectedStaff = {} as StaffDto;
 
+  deparments : DepartmentDto[] = [];
+
   form: FormGroup;
 
   genders = genderOptions;
@@ -24,6 +27,7 @@ export class StaffComponent implements OnInit {
   constructor(
     public readonly list: ListService,
     private staffService: StaffService,
+    private departmentService: DepartmentService,
     private fb: FormBuilder,
     private confirm: ConfirmationService
   ) {}
@@ -33,6 +37,13 @@ export class StaffComponent implements OnInit {
     this.list.hookToQuery(staffStreamCreator).subscribe(response => {
       this.staff = response;
     });
+
+    const reqParams: GetDepartmentListDto = { filter: '', maxResultCount: 10, skipCount: null, sorting: null};
+
+    //fetch department list
+    this.departmentService.getList(reqParams).subscribe(response => {
+      this.deparments = response.items
+    })
   }
 
   createStaff() {
@@ -66,7 +77,7 @@ export class StaffComponent implements OnInit {
       ],
       email: [this.selectedStaff.email || null, Validators.required],
       phone: [this.selectedStaff.phone || null, Validators.required],
-      department: [this.selectedStaff.departmentId || null, Validators.required],
+      departmentId: [this.selectedStaff.departmentId || null, Validators.required],
       title: [this.selectedStaff.title || null, Validators.required],
     });
   }

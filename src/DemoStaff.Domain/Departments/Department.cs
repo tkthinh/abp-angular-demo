@@ -9,9 +9,7 @@ namespace DemoStaff.Departments
    {
       public string Name { get; set; }
 
-      public Department(){
-         //Id = Guid.NewGuid();
-      }
+      public Department() {}
 
       internal Department(Guid id, string name) : base(id)
       {

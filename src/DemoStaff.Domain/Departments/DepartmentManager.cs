@@ -7,11 +7,11 @@ using Volo.Abp.Domain.Services;
 
 namespace DemoStaff.Departments
 {
-   public class DepartmentManager : DomainService
+   public class TitleManager : DomainService
    {
       private readonly IDepartmentRepository _departmentRepository;
 
-      public DepartmentManager(IDepartmentRepository departmentRepository)
+      public TitleManager(IDepartmentRepository departmentRepository)
       {
          _departmentRepository = departmentRepository;
       }
