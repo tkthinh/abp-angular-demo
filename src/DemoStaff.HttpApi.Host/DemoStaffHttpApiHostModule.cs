@@ -38,6 +38,7 @@ using Volo.Abp.OpenIddict;
 using Volo.Abp.Swashbuckle;
 using Volo.Abp.Studio.Client.AspNetCore;
 using Volo.Abp.Security.Claims;
+using Microsoft.AspNetCore.Identity;
 
 namespace DemoStaff;
 
@@ -70,7 +71,12 @@ public class DemoStaffHttpApiHostModule : AbpModule
             });
         });
 
-        if (!hostingEnvironment.IsDevelopment())
+        PreConfigure<IdentityBuilder>(IdentityBuilder =>
+        {
+          IdentityBuilder.AddSignInManager<CustomSignInManager>();
+        });
+
+    if (!hostingEnvironment.IsDevelopment())
         {
             PreConfigure<AbpOpenIddictAspNetCoreOptions>(options =>
             {
@@ -85,12 +91,12 @@ public class DemoStaffHttpApiHostModule : AbpModule
         }
     }
 
-    public override void ConfigureServices(ServiceConfigurationContext context)
+  public override void ConfigureServices(ServiceConfigurationContext context)
     {
         var configuration = context.Services.GetConfiguration();
         var hostingEnvironment = context.Services.GetHostingEnvironment();
 
-        if (!configuration.GetValue<bool>("App:DisablePII"))
+      if (!configuration.GetValue<bool>("App:DisablePII"))
         {
             Microsoft.IdentityModel.Logging.IdentityModelEventSource.ShowPII = true;
             Microsoft.IdentityModel.Logging.IdentityModelEventSource.LogCompleteSecurityArtifact = true;
@@ -113,16 +119,16 @@ public class DemoStaffHttpApiHostModule : AbpModule
         ConfigureCors(context, configuration);
     }
 
-    private void ConfigureAuthentication(ServiceConfigurationContext context)
-    {
-        context.Services.ForwardIdentityAuthenticationForBearer(OpenIddictValidationAspNetCoreDefaults.AuthenticationScheme);
-        context.Services.Configure<AbpClaimsPrincipalFactoryOptions>(options =>
-        {
-            options.IsDynamicClaimsEnabled = true;
-        });
-    }
+   private void ConfigureAuthentication(ServiceConfigurationContext context)
+   {
+      context.Services.ForwardIdentityAuthenticationForBearer(OpenIddictValidationAspNetCoreDefaults.AuthenticationScheme);
+      context.Services.Configure<AbpClaimsPrincipalFactoryOptions>(options =>
+      {
+         options.IsDynamicClaimsEnabled = true;
+      });
+   }
 
-    private void ConfigureUrls(IConfiguration configuration)
+   private void ConfigureUrls(IConfiguration configuration)
     {
         Configure<AppUrlOptions>(options =>
         {

@@ -15,12 +15,12 @@ namespace DemoStaff
    {
       private readonly IRepository<Staff, Guid> _staffRepository;
       private readonly IRepository<Department, Guid> _departmentRepository;
-      private readonly DepartmentManager _departmentManager;
+      private readonly TitleManager _departmentManager;
 
       public DemoStaffDataSeederContributor(
           IRepository<Staff, Guid> staffRepository,
           IRepository<Department, Guid> departmentRepository,
-          DepartmentManager departmentManager)
+          TitleManager departmentManager)
       {
          _staffRepository = staffRepository;
          _departmentRepository = departmentRepository;
@@ -59,7 +59,7 @@ namespace DemoStaff
                 Name = "Alice Johnson",
                 Gender = Gender.Female,
                 Email = "alice.johnson@example.com",
-                Phone = "123-456-7890",
+                Phone = "1234567890",
                 DepartmentId = hrDepartment.Id,
                 Title = "HR Manager"
              },
@@ -72,7 +72,7 @@ namespace DemoStaff
                 Name = "Bob Smith",
                 Gender = Gender.Male,
                 Email = "bob.smith@example.com",
-                Phone = "098-765-4321",
+                Phone = "0987654321",
                 DepartmentId = itDepartment.Id,
                 Title = "Senior Software Engineer"
              },
@@ -85,7 +85,7 @@ namespace DemoStaff
                 Name = "Carol Davis",
                 Gender = Gender.Female,
                 Email = "carol.davis@example.com",
-                Phone = "234-567-8901",
+                Phone = "2345678901",
                 DepartmentId = financeDepartment.Id,
                 Title = "Finance Analyst"
              },
@@ -98,7 +98,7 @@ namespace DemoStaff
                 Name = "David Miller",
                 Gender = Gender.Male,
                 Email = "david.miller@example.com",
-                Phone = "876-543-2109",
+                Phone = "8765432109",
                 DepartmentId = marketingDepartment.Id,
                 Title = "Marketing Specialist"
              },
@@ -111,7 +111,7 @@ namespace DemoStaff
                 Name = "Emily Clark",
                 Gender = Gender.Female,
                 Email = "emily.clark@example.com",
-                Phone = "321-654-9870",
+                Phone = "3216549870",
                 DepartmentId = itDepartment.Id,
                 Title = "DevOps Engineer"
              },
@@ -124,7 +124,7 @@ namespace DemoStaff
                 Name = "Frank Thompson",
                 Gender = Gender.Male,
                 Email = "frank.thompson@example.com",
-                Phone = "567-890-1234",
+                Phone = "5678901234",
                 DepartmentId = hrDepartment.Id,
                 Title = "HR Assistant"
              },
@@ -137,7 +137,7 @@ namespace DemoStaff
                 Name = "Grace Wilson",
                 Gender = Gender.Female,
                 Email = "grace.wilson@example.com",
-                Phone = "654-321-9876",
+                Phone = "6543219876",
                 DepartmentId = marketingDepartment.Id,
                 Title = "Content Manager"
              },
@@ -150,7 +150,7 @@ namespace DemoStaff
                 Name = "Henry Moore",
                 Gender = Gender.Male,
                 Email = "henry.moore@example.com",
-                Phone = "456-789-0123",
+                Phone = "4567890123",
                 DepartmentId = financeDepartment.Id,
                 Title = "Finance Manager"
              },
